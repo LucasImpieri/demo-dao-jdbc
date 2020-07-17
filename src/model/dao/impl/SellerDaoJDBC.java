@@ -56,8 +56,7 @@ public class SellerDaoJDBC implements SellerDao{
 			}
 			else {
 				throw new DbException("Unexpected error! No rows affected!");
-			}
-			
+			}	
 		}
 		catch(SQLException e){
 			throw new DbException(e.getMessage());
@@ -69,7 +68,7 @@ public class SellerDaoJDBC implements SellerDao{
 
 	@Override
 	public void update(Seller obj) {
-PreparedStatement st = null;
+		PreparedStatement st = null;
 		
 		try {
 			st = conn.prepareStatement(
@@ -92,7 +91,6 @@ PreparedStatement st = null;
 		finally {
 			DB.closeStatement(st);
 		}
-		
 	}
 
 	@Override
@@ -109,8 +107,7 @@ PreparedStatement st = null;
 			
 			if (rowsAffected == 0) {
 				throw new DbException("Unexpected error! No rows affected!");
-			}
-			
+			}	
 		}
 		catch (SQLException e) {
 			throw new DbException(e.getMessage());
@@ -118,12 +115,10 @@ PreparedStatement st = null;
 		finally {
 			DB.closeStatement(st);
 		}
-		
-		
 	}
 
 	@Override
-	public Seller finndById(Integer id) {
+	public Seller findById(Integer id) {
 		
 		PreparedStatement st = null;
 		ResultSet rs = null;

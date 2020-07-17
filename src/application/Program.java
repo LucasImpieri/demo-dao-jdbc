@@ -20,7 +20,7 @@ public class Program {
 		System.out.println("===== TEST 1: seller findById =====");
 		System.out.println();
 		
-		Seller seller = sellerDao.finndById(3);
+		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 		
 		System.out.println("\n===== TEST 2: seller findByDepartment =====");
@@ -50,7 +50,7 @@ public class Program {
 		System.out.println("\n===== TEST 5: seller update =====");
 		System.out.println();
 		
-		seller = sellerDao.finndById(1);
+		seller = sellerDao.findById(1);
 		seller.setName("Marta Waine");
 		sellerDao.update(seller);
 		
